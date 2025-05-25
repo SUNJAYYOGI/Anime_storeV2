@@ -5,6 +5,7 @@ class Anime(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     thumbnail_url = models.URLField(blank=True)
+    trailer_url = models.URLField(blank=True)
 
     def __str__(self):
         return f"{self.title}"

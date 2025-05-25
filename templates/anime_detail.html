@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_filters %}
 
 {% block title %}{{ anime.title }} | Anime Store{% endblock %}
 
@@ -9,6 +10,20 @@
   <img class="anime-detail-img" src="{{ anime.thumbnail_url }}" alt="{{ anime.title }}">
 
   <p class="anime-description">{{ anime.description }}</p>
+
+  {% if anime.trailer_url %}
+    <h2 class="trailer-heading">Trailer</h2>
+    <div class="trailer-container">
+      <iframe class="trailer-video"
+              src="{{ anime.trailer_url|youtube_embed }}"
+              title="Anime Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+  {% endif %}
 
   <h2 class="episode-heading">Episodes</h2>
   <ul class="episode-list">
