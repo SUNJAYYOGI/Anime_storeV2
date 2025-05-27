@@ -30,7 +30,7 @@
     {% for episode in anime.episodes.all %}
       <li class="episode-item">
         <strong>{{ episode.title }}</strong>
-        <a href="{{ episode.video_link }}" target="_blank" class="watch-link">Watch or download</a>
+        <a href="{{ episode.video_link }}" class="watch-link">Watch or download</a>
       </li>
     {% endfor %}
   </ul>
